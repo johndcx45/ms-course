@@ -16,7 +16,7 @@ public class Instantiation implements CommandLineRunner{
 	@Override
 	public void run(String... args) {
 		Worker worker1 = new Worker(1L, "Bob", 200.0);
-		Worker worker2 = new Worker(2L, "Bob", 300.0);
+		Worker worker2 = new Worker(2L, "Maria", 300.0);
 		Worker worker3 = new Worker(3L, "Alex", 250.0);
 		
 		workerRepository.save(worker1);

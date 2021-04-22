@@ -2,22 +2,30 @@ package com.ms.hrpayroll.entities;
 
 import java.io.Serializable;
 
-public class Payment implements Serializable{
-	
+public class Worker implements Serializable{
+	//Serializable makes the class be able to be transformed in bytes
 	private static final long serialVersionUID = 1L;
-	
+
+	private Long id;
 	private String name;
 	private Double dailyIncome;
-	private Integer days;
 	
-	public Payment() {
+	public Worker() {
 	}
 
-	public Payment(String name, Double dailyIncome, Integer days) {
+	public Worker(Long id, String name, Double dailyIncome) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.dailyIncome = dailyIncome;
-		this.days = days;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -34,17 +42,5 @@ public class Payment implements Serializable{
 
 	public void setDailyIncome(Double dailyIncome) {
 		this.dailyIncome = dailyIncome;
-	}
-
-	public Integer getDays() {
-		return days;
-	}
-
-	public void setDays(Integer days) {
-		this.days = days;
-	}
-	
-	public double getTotal() {
-		return days * dailyIncome;
 	}
 }
